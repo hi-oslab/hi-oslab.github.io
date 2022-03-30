@@ -1,0 +1,243 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*main css*/
+@font-face {
+  font-family: 'Arita-buri-SemiBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+.container {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-family: 'Jost';
+  font-weight: 300;
+}
+
+.nav {
+  border-top: 2px solid #000;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.menu {
+  display: flex;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.menu li {
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  flex: 1;
+}
+.menu li>a{
+    transition: 0.5s;
+}
+.menu li:hover>a {
+  background: #000;
+  color: #fff;
+}
+
+.menu li:first-child {
+  text-align: left;
+}
+
+.menu li:last-child {
+  text-align: right;
+}
+
+.menu li>a {
+  display: block;
+  font-size: 9vw;
+  padding: 5px;
+}
+
+.main {
+}
+
+.sns {
+  position: fixed;
+  background: #fff;
+  box-sizing: border-box;
+  font-size: 7vw;
+  border: 2px solid #000;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  left: 0;
+  z-index: 99;
+  transition: 0.5s;
+}
+.sns:hover{
+  box-shadow: 2px 2px 2px 2px;
+}
+
+.logo {
+  position: fixed;
+  right: 0px;
+  z-index: 99;
+  padding: 10px;
+}
+.logo img{
+  width: 12.5vw;
+  transition: 0.5s;
+}
+.logo img:hover{
+  opacity: 70%;
+}
+
+#clock {
+  position: fixed;
+  font-size: 6vh;
+  writing-mode: vertical-lr;
+  padding: 10px;
+  top:17vw;
+  right: 0px;
+  color: #000;
+  z-index: 99;
+
+}
