@@ -13,13 +13,12 @@ function setup() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  fill(255, 150);
-  rect(0, 0, width, height);
+background(255);
+
 }
 
 function draw() {
-  fill(255, 150);
-  rect(0, 0, width, height);
+background(255);
 
   // drawO(createVector(width / 2, height / 2));
   // drawS(createVector(width / 2, height / 2));
