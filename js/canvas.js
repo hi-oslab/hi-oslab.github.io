@@ -13,7 +13,8 @@ function setup() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  background(255);
+  fill(255, 150);
+  rect(0, 0, width, height);
 }
 
 function draw() {
