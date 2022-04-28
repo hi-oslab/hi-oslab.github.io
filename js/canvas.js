@@ -39,7 +39,7 @@ function Spring2D(xpos, ypos, m, g, val) {
   this.vy = 0;
   this.mass = m;
   this.gravity = g;
-  this.radius = 256 / width;
+  this.radius = 64 / width;
   this.stiffness = 0.2;
   this.damping = 0.7;
   this.val = val;
