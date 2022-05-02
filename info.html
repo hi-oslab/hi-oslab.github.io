@@ -1,97 +1,217 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Open Source Lab</title>
+    <link
+      rel="stylesheet"
+      href="https://indestructibletype.com/fonts/Jost.css"
+      type="text/css"
+      charset="utf-8"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      .menu li:nth-child(2) > a {
+        font-weight: 300;
+        background: #000;
+        color: #fff;
+      }
+      .modal {
+        position: absolute;
+        background: #fff;
+        border: 2px solid #000;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding-bottom: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        z-index: 9;
+      }
+      .modal h2 {
+        display: block;
+        border-bottom: 2px solid #000;
+        font-weight: 400;
+      }
+      .modal p {
+        display: block;
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <title>Open Source Lab</title>
-  <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="css/main.css">
-  <style>
-    .menu li:first-child>a {
-      font-weight: 300;
-      background: #000;
-      color: #fff;
-    }
+        padding: 10px;
+      }
+      .hongikpage {
+        position: absolute;
+        box-sizing: border-box;
+        transition: 0.5s;
+        border: 1px solid #000;
+        border-radius: 10px;
+        background-color: #000;
+        color: #fff;
+        transition: 0.5s;
+        padding: 10px;
+      }
+      .hongikpage:hover {
+        background: #000;
+        color: #fff;
+        background-color: #fff;
+        color: #000;
+      }
+      @media all and (max-width: 768px) {
+        /* Mobile */
+        .modal {
+          text-align: center;
+          width: 80vw;
+          height: 40vh;
+        }
 
-    .modal {
-      position: absolute;
-      background: #fff;
-      border: 2px solid #000;
-      box-sizing: border-box;
-      border-radius: 10px;
-      padding-bottom: 10px;
-      top: 50%;
-      left: 50%;
-      width: 80vw;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      overflow: hidden;
-      z-index: 9;
-    }
+        .modal h2 {
+          padding: 5px;
+        }
 
-    .modal h2 {
-      display: block;
-      border-bottom: 2px solid #000;
-      font-weight: 400;
-      padding: 5px;
-    }
+        .modal p {
+          word-break: keep-all;
+          font-size: 1.5vh;
+          line-height: 3vh;
+        }
+        .hongikpage {
+          bottom: 0px;
+          margin: 10px;
+          font-size: 10px;
+          width: 200px;
+          left: 50%;
+          transform: translate(-50%, 0%);
+        }
+        #osl_wlogo {
+          display: none;
+        }
+        #career {
+          display: none;
+        }
+      }
+      @media all and (min-width: 768px) {
+        /*Desktop*/
+        .modal {
+          width: 90vw;
+          height: 600px;
+        }
+        .modal h2 {
+          padding: 10px;
+        }
+        .modal p {
+          width: 60%;
+          position: absolute;
+          top: 100px;
+          height: 30%;
+          right: 0px;
+          margin: 20px;
+          word-break: keep-all;
+          font-size: 1.6vw;
+          line-height: 1.6em;
+        }
+        #osl_wlogo {
+          width: 30%;
+          position: absolute;
+          left: 0px;
+          margin: 20px;
+        }
+        .hongikpage {
+          bottom: 20px;
+          right: 20px;
+        }
+        #career {
+          position: absolute;
+          bottom: 0px;
+          margin: 0px 30px;
+          font-size: 1vw;
+          border-top: 1px solid #000;
+          width: 85vw;
+          padding-top: 10px;
+        }
+        #career ul li {
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
 
-    .modal p {
-      display: block;
-      word-break: keep-all;
+  <body>
+    <div class="container">
+      <div class="nav">
+        <ul class="menu">
+          <li><a href="index.html">home</a></li>
+          <li><a href="info.html">info</a></li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </div>
+      <div class="m_menu">
+        <a href="#">MENU</a>
+        <div class="sub-menu">
+          <a href="index.html">home</a>
+          <a href="info.html">info</a>
+          <a href="works.html">works</a>
+          <a href="contact.html">contact</a>
+        </div>
+      </div>
+      <div class="main">
+        <!-- main content-->
+        <div class="modal">
+          <h2>Open Source Lab</h2>
+          <p>
+            2018년 홍익대학교 디지털미디어디자인 전공 학생과 디자인컨버전스학부
+            학생들이 만나 예술과 디지털기술에대해 공부하며 시작된 모임으로
+            현재는 다양한 코드와 마크업 언어를 이용하여 인터랙션이 있는 미디어
+            아트, 그리고 사물을 접목시킨 피지컬 컴퓨팅 작품을 만들고 토론한다.
+            자유 소프트웨어 운동에서 비롯된 "오픈소스" 문화의 특징인 정보공유
+            평등주의와 협업주의를 받아들여 계승하자는 의미로 'Open Source Lab'
+            이라는 이름으로 정하였다.
+          </p>
+          <img src="img/OSL_wlogo.png" alt="osl_png" id="osl_wlogo" />
+          <div id="career">
+            <ul>
+              <li>
+                2022.04.27 - 2022.05.08 | Vuja de:익숙한 무엇을 낯설게 하는 과정
+                _ BRT 작은 미술관 전시
+              </li>
+              <li>2022.03.18 | 2022 오픈소스랩 RECRUIT</li>
+              <li>
+                2021.03.17 - 2021.04.15 | 여정:여행을 정의하다 _ 도시재생 홍보관
+                전시
+              </li>
+              <li>
+                2020.07.25 | 만춘:지나가버린 봄 _ 오픈소스랩 온라인 웹 전시
+              </li>
+              <li>2020.03.25 | Open Source Lab 2020 Recruit</li>
+              <li>
+                2019.06.10 - 2019.06.12 | 첫 전시, 시발점 _ 홍익대학교
+                세종캠퍼스 M동 1층 로비
+              </li>
+              <li>2019.04.04 | Open Source Lab 2019 신입 모집</li>
+              <li>2018.10.10 | '오픈소스랩' OS LAB 결성.</li>
+            </ul>
+            <br />
+          </div>
+          <a
+            href="https://hicoda.hongik.ac.kr/emerging-creativity/community/?tab=club"
+            class="hongikpage"
+            >> 홍익대학교 상세페이지</a
+          >
+        </div>
+      </div>
 
-      padding: 10px;
-      font-size: 1.5vh;
-      line-height: 3.0vh;
-    }
-
-    .hongikpage {  
-      box-sizing: border-box;
-      font-size:0.1vw;
-      transition: 0.5s;
-    }
-    .hongikpage:hover{
-      background: #000;
-      color: #fff;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="nav">
-      <ul class="menu">
-        <li><a href="info.html">info</a></li>
-        <li><a href="works.html">works</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
-    </div>
-    <div class="main">
-      <!-- main content-->
-      <div class="modal">
-        <h2>Open Source Lab</h2>
-        <p>2018년 홍익대학교 디지털미디어디자인 전공 학생과 디자인컨버전스학부 학생들이 만나 예술과 디지털기술에대해 공부하며 시작된 모임으로 <br><br> 현재는 다양한 코드와 마크업 언어를 이용하여
-          인터랙션이 있는
-          미디어 아트, 그리고 사물을 접목시킨 피지컬 컴퓨팅 작품을 만들고 토론한다. <br><br>
-          자유 소프트웨어 운동에서 비롯된 "오픈소스" 문화의 특징인 정보공유 평등주의와 협업주의를 받아들여 계승하자는 의미로 'Open Source Lab'이라는 이름으로 정하였다.
-        </p>
-        <a href="https://hicoda.hongik.ac.kr/dept/0502.html" class="hongikpage">> 홍익대학교 상세페이지</a>
+      <div class="logo">
+        <a href="https://instagram.com/opensource_lab">
+          <img src="img/osl_logo.png" alt="logo" />
+        </a>
+      </div>
+      <div class="sns">
+        <a href="index.html">Open Source Lab</a>
       </div>
     </div>
-
-    <div class="logo">
-      <a href="https://instagram.com/opensource_lab">
-        <img src="img/osl_logo.png" alt="logo">
-      </a>
-    </div>
-    <div class="sns">
-      <a href="index.html">Open Source Lab</a>
-    </div>
-  </div>
-
-</body>
-
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
 </html>

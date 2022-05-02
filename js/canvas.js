@@ -6,19 +6,20 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
   // 입력: x, y, mass(질량), gravity(중력)
-  o = new Spring2D(0.0, width / 2, mass, gravity, 0,width);
-  s = new Spring2D(0.0, width / 2, mass, gravity, 1,width);
-  l = new Spring2D(0.0, width / 2, mass, gravity, 2,width);
+  o = new Spring2D(0.0, width / 2, mass, gravity, 0, width);
+  s = new Spring2D(0.0, width / 2, mass, gravity, 1, width);
+  l = new Spring2D(0.0, width / 2, mass, gravity, 2, width);
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-background(255);
-
+  fill(255, 150);
+  rect(0, 0, width, height);
 }
 
 function draw() {
-background(255);
+  fill(255, 150);
+  rect(0, 0, width, height);
 
   // drawO(createVector(width / 2, height / 2));
   // drawS(createVector(width / 2, height / 2));
@@ -31,7 +32,7 @@ background(255);
   l.display(s.x, s.y);
 }
 
-function Spring2D(xpos, ypos, m, g, val,w) {
+function Spring2D(xpos, ypos, m, g, val, w) {
   this.x = xpos; // x 와 y 좌표
   this.y = ypos;
   this.vx = 0; // x축과 y축 속도
