@@ -1,255 +1,562 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Open Source Lab</title>
+    <link
+      rel="stylesheet"
+      href="https://indestructibletype.com/fonts/Jost.css"
+      type="text/css"
+      charset="utf-8"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      .menu li:nth-child(3) > a {
+        font-weight: 300;
+        background: #000;
+        color: #fff;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <title>Open Source Lab</title>
-  <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="css/main.css">
-  <style>
-    .menu li:nth-child(2)>a {
-      font-weight: 300;
-      background: #000;
-      color: #fff;
-    }
+      .content-box {
+        position: absolute;
+        z-index: 9;
+        word-break: keep-all;
+      }
+      h2 {
+        font-weight: normal;
+      }
+      .projbox {
+        display: block;
+      }
+      .projbox span {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 3vw;
+      }
+      .projbox img {
+        width: 300px;
+      }
+      @media all and (max-width: 768px) {
+        /* Mobile */
+        .content-box {
+          top: 50px;
+          left: 50%;
+          transform: translate(-50%, 0%);
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          margin-top: 50px;
+          padding-bottom: 20px;
+          background: #000;
+          color: #fff;
+          border: 2px solid #000;
+          border-radius: 15px;
+        }
+        .layout {
+          flex: 1;
+          padding: 10px 0px;
+          border-bottom: 2px solid #fff;
+        }
+        .layout:last-child {
+          border-bottom: none;
+        }
+        h2 {
+          font-size: 7vw;
+          padding: 10px;
+        }
+        .projbox p {
+          width: 95%;
+          font-size: 10px;
+          line-height: 2.2em;
+          margin-bottom: 10px;
+        }
+        .projbox div {
+          padding: 10px 0px;
+        }
+      }
 
-    .content-box {
-      position: absolute;
-      background: #000;
-      color: #fff;
-      top: 50px;
-      left: 50%;
-      transform: translate(-50%, 0%);
-      z-index: 9;
-      display: flex;
-      flex-direction: column;
-      border: 2px solid #000;
-      border-radius: 15px;
-      padding: 10px;
-      margin-top: 50px;
-      padding-bottom: 100px;
-      word-break: keep-all;
-    }
+      @media all and (min-width: 768px) {
+        /* Desktop */
+        .content-box {
+          width: 85%;
+          position: absolute;
+          top: 20%;
+          left: 50%;
+          transform: translate(-50%, 0%);
+          padding-bottom: 200px;
+        }
+        .layout {
+          margin: 50px 0px;
+          padding: 20px 0px;
+          border: 2px solid #000;
+          border-radius: 10px;
+          background-color: #000;
+          color: #fff;
+        }
 
-    .layout {
-      flex: 1;
-      padding: 10px 0px;
-      border-bottom: 2px solid #fff;
-    }
+        h2 {
+          font-size: 2vw;
+          font-weight: normal;
+          padding-left: 20px;
+          padding-bottom: 20px;
 
-    .layout:last-child {
-      border-bottom: none;
-    }
+          border-bottom: 2px solid #fff;
+        }
+        .projbox {
+          display: grid;
+          grid-template-rows: 1fr 4fr;
+          grid-template-columns: 1fr 3fr;
+          padding: 30px;
+        }
+        .projbox span {
+          font-size: 2vw;
+          font-weight: normal;
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+        .projbox > div {
+          padding: 20px;
+        }
+        .projbox p {
+          width: 95%;
+          font-size: 1.4vw;
+          line-height: 2.2em;
+          padding-left: 20px;
+        }
+        .projbox img,
+        .slide05,
+        .slide06,
+        .slide09,
+        #image_link {
+          box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+        }
+      }
+      /*Slide*/
+      .slide05 {
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
+      }
 
-    h2 {
-      font-size: 7vw;
-      font-weight: normal;
-      padding: 10px;
-    }
-
-    .projbox {
-      display: block;
-    }
-
-    .projbox span {
-      display: block;
-      padding: 10px;
-      margin-bottom: 10px;
-      text-align: left;
-      font-size: 3vw;
-    }
-
-    .projbox img {
-      width: 300px;
-    }
-
-    .projbox p {
-      width: 95%;
-      font-size: 10px;
-      line-height: 2.0em;
-      margin-bottom: 10px;
-    }
-
-    /*Slide*/
-    .slide01 {
-      box-sizing: border-box;
-      position: relative;
-      overflow: hidden;
-      width: 300px;
-      height: 300px;
-    }
-
-    .slide01>div {
-      width: 1500px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 0;
-      box-sizing: border-box;
-      animation: slide01 15s linear infinite;
-    }
-
-    @keyframes slide01 {
-      0% {
+      .slide05 > div {
+        width: 1500px;
+        position: absolute;
+        top: 0;
         left: 0;
+        font-size: 0;
+        box-sizing: border-box;
+        animation: slide05 15s linear infinite;
       }
 
-      15% {
+      @keyframes slide05 {
+        0% {
+          left: 0;
+        }
+
+        15% {
+          left: 0;
+        }
+
+        20% {
+          left: -300px;
+        }
+
+        35% {
+          left: -300px;
+        }
+
+        40% {
+          left: -600px;
+        }
+
+        55% {
+          left: -600px;
+        }
+
+        60% {
+          left: -900px;
+        }
+
+        75% {
+          left: -900px;
+        }
+
+        80% {
+          left: -1200px;
+        }
+
+        95% {
+          left: -1200px;
+        }
+
+        100% {
+          left: 0;
+        }
+      }
+      .slide06 {
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
+      }
+
+      .slide06 > div {
+        width: 1800px;
+        position: absolute;
+        top: 0;
         left: 0;
+        font-size: 0;
+        box-sizing: border-box;
+        animation: slide05 17s linear infinite;
       }
 
-      20% {
-        left: -300px;
+      @keyframes slide06 {
+        0% {
+          left: 0;
+        }
+
+        16% {
+          left: 0;
+        }
+
+        18% {
+          left: -300px;
+        }
+
+        34% {
+          left: -300px;
+        }
+
+        36% {
+          left: -600px;
+        }
+
+        52% {
+          left: -600px;
+        }
+
+        54% {
+          left: -900px;
+        }
+
+        70% {
+          left: -900px;
+        }
+
+        72% {
+          left: -1200px;
+        }
+
+        88% {
+          left: -1200px;
+        }
+        90% {
+          left: -1500px;
+        }
+
+        96% {
+          left: -1500px;
+        }
+        100% {
+          left: 0;
+        }
+      }
+      .slide09 {
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
       }
 
-      35% {
-        left: -300px;
-      }
-
-      40% {
-        left: -600px;
-      }
-
-      55% {
-        left: -600px;
-      }
-
-      60% {
-        left: -900px;
-      }
-
-      75% {
-        left: -900px;
-      }
-
-      80% {
-        left: -1200px;
-      }
-
-      95% {
-        left: -1200px;
-      }
-
-      100% {
+      .slide09 > div {
+        width: 2400px;
+        position: absolute;
+        top: 0;
         left: 0;
+        font-size: 0;
+        box-sizing: border-box;
+        animation: slide09 20s linear infinite;
       }
-    }
+      @keyframes slide09 {
+        0% {
+          left: 0;
+        }
 
-    #latespring {
-      transition: 0.5s;
-    }
+        10% {
+          left: 0;
+        }
 
-    #latespring>img {
-      animation: blink 2s ease-in-out infinite;
-    }
+        12% {
+          left: -300px;
+        }
 
-    @keyframes blink {
-      0% {
-        opacity: 1;
+        22% {
+          left: -300px;
+        }
+
+        24% {
+          left: -600px;
+        }
+
+        34% {
+          left: -600px;
+        }
+
+        36% {
+          left: -900px;
+        }
+
+        46% {
+          left: -900px;
+        }
+
+        48% {
+          left: -1200px;
+        }
+
+        58% {
+          left: -1200px;
+        }
+
+        60% {
+          left: -1500px;
+        }
+
+        70% {
+          left: -1500px;
+        }
+        72% {
+          left: -1800px;
+        }
+
+        82% {
+          left: -1800px;
+        }
+
+        84% {
+          left: -2100px;
+        }
+
+        96% {
+          left: -2100px;
+        }
+        100% {
+          left: 0px;
+        }
+      }
+      #latespring {
+        transition: 0.5s;
       }
 
-      100% {
-        opacity: 0.5;
-
+      #latespring > img {
+        animation: blink 2s ease-in-out infinite;
       }
 
-    }
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
 
-    .golink {
-      color: #777;
-    }
-  </style>
-</head>
+        100% {
+          opacity: 0.5;
+        }
+      }
 
-<body>
-  <div class="container">
-    <div class="nav">
-      <ul class="menu">
-        <li><a href="info.html">info</a></li>
-        <li><a href="works.html">works</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
-    </div>
-    <div class="main">
-      <!-- main content-->
-      <div class="content-box">
-        <div class="layout">
-          <h2>2022</h2>
-          <div class="projbox">
-            <span> 진행중...</span>
-          </div>
+      .golink {
+        color: #777;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="nav">
+        <ul class="menu">
+          <li><a href="index.html">home</a></li>
+          <li><a href="info.html">info</a></li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </div>
+      <div class="m_menu">
+        <a href="#">MENU</a>
+        <div class="sub-menu">
+          <a href="index.html">home</a>
+          <a href="info.html">info</a>
+          <a href="works.html">works</a>
+          <a href="contact.html">contact</a>
         </div>
-        <div class="layout">
-          <h2>2021</h2>
-          <div class="projbox">
-            <span>2021 여정, 세종시 도시재생 홍보관 전시</span>
-            <img src="img/2021yeojung.jpg" alt="2021_yeojung">
-            <p>-여정, 여행을 정의하다-<br>
-              물리적 이동으로 국한되었던 여행을 재정의하여 여러분에게 새로운 여행을 선사한다는 취지의 오프라인 전시. 나의 행동에 따라 느리고 빠르게 반응하는 사운드부터 코로나 이후 새롭게 그려지는 성향별
-              미디어지도, 우리가 사는 조치원을 추상적으로 재해석한 증강현실 로드맵 등 다영한 인터랙티브 미디어 아트 작품을 제작하였다.
-            </p>
-          </div>
-        </div>
-        <div class="layout">
-          <h2>2020</h2>
-          <div class="projbox">
-            <span>만춘 2020. 온라인 웹 전시</span>
-            <a href="https://hi-oslab.github.io/latespring2020/" id="latespring"> <img src="img/latespring.jpg"
-                alt="2020_latespring"></a>
-            <p class="golink">(사진 클릭 후 전시페이지로 넘어갑니다)</p>
-            <p>-만춘:지나가버린 봄- <br>
-              ‘보통의 봄’과 달리, 코로나 19 상황은 어쩌면 우리에게 새로운 의미의 봄을 보여줬을 지도 모른다.
-              코로나 상황 속, 흘러가듯 늦은 봄을 보내는 우리들의 생각을 담고자 《만춘》을 준비해 보았다.
-              모든 과정을 비대면으로 진행해 온 우리는
-              관람객과 소통하는 ‘인터렉션(Interaction)’에 초점을 맞춰 시공간에 구애받지 않는 언택트(Untact)
-              작품을 만들고자 하였다.
-            </p>
-          </div>
-        </div>
-        <div class="layout">
-          <h2>2019</h2>
-          <div class="projbox">
-            <span>2019 시발점. 첫 전시회</span>
-            <div class="slide01">
+      </div>
+      <div class="main">
+        <!-- main content-->
+        <div class="content-box">
+          <div class="layout">
+            <h2>2022</h2>
+            <div class="projbox">
+              <span>&#60; Vuja de : 익숙한 무엇을 낯설게 하는 과정 &#62; </span>
+              <div class="slide09">
+                <div>
+                  <a href="#"
+                    ><img src="img/vujade_poster.jpg" alt="slide01"
+                  /></a>
+                  <a href="#"><img src="img/vujade_00.jpg" alt="slide02" /></a>
+                  <a href="#"><img src="img/vujade_01.jpg" alt="slide03" /></a>
+                  <a href="#"><img src="img/vujade_02.jpg" alt="slide04" /></a>
+                  <a href="#"><img src="img/vujade_03.jpg" alt="slide05" /></a>
+                  <a href="#"><img src="img/vujade_04.jpg" alt="slide05" /></a>
+                  <a href="#"><img src="img/vujade_05.jpg" alt="slide05" /></a>
+                  <a href="#"><img src="img/vujade_06.jpg" alt="slide05" /></a>
+                  <a href="#"><img src="img/vujade_07.jpg" alt="slide05" /></a>
+                </div>
+              </div>
               <div>
-                <a href="#"><img src="img/2019_sibaljeom.JPG" alt="slide01"></a>
-                <a href="#"><img src="img/sibaljeom_01.jpg" alt="slide02"></a>
-                <a href="#"><img src="img/sibaljeom_02.jpg" alt="slide03"></a>
-                <a href="#"><img src="img/sibaljeom_03.jpg" alt="slide04"></a>
-                <a href="#"><img src="img/sibaljeom_04.jpg" alt="slide05"></a>
+                <p>
+                  <mark>- 뷰자데 | 오픈소스랩 리드멤버 2022 작품전 -</mark
+                  ><br />
+                  익숙한 무엇을 낯설게 느끼는 현상을 '뷰자데'라 한다.
+                  오픈소스랩은 본 전시를 통해 일상적인 자연현상에 대한 경험을 뉴
+                  미디어로 극대화하여 관객들에게 새롭지만 낯설고 신비한 경험을
+                  제공하고자 한다. *본 전시는 '세종시문화재단 2022 상반기
+                  전시공간 지원사업'에 선정되어 BRT 작은 미술관 공간을 후원받아
+                  진행되었다.
+                </p>
               </div>
             </div>
-            <p>-시발점. 처음 시작되다!-<br>
-              Open Source Lab에서 처음으로 진행한 전시. 시작하다라는 의미를 담은 '시발점'을 주제로 피지털컴퓨팀 1 팀, 비주얼 프로그래밍 3팀이 인터랙티브 미디어 아트 작품을 선보였다. 홍익대학교에서 실시간으로 관객참여가 가능한 인터랙티브 미디어아트 전시는 처음이었으며 이 전시를 통해 'Open Source Lab'의 존재를 조금이나마 더 알릴 수 있었다.
-            </p>
           </div>
-        </div>
-        <div class="layout">
-          <h2>2018</h2>
-          <div class="projbox">
-            <span>2018 Processing Study</span>
-            <img src="img/2018_oslabstudy.jpg" alt="2018_osl_study">
-            <p>-Processing 함수 Study-<br>
-              매주마다 Processing 기본 제공 함수 하나를 정하여 모든 맴버들끼리 직접 함수 구조를 만들어보는 스터디형식으로 프로그래밍에 대한 전반적인 이해력과 함수 활용 능력을 높여 코딩에 대해 한 발짝 더 다가갈 수 있도록 하는 스터디였다. 그 외에도 스터디 전에 진행하는 10분 코딩 워크샵을 통해 비주얼프로그래밍에 자신감과 재미를 얻을 수 있었다.
-            </p>
+          <div class="layout">
+            <h2>2021</h2>
+            <div class="projbox">
+              <span>2021 여정, 세종시 도시재생 홍보관 전시</span>
+              <div class="slide06">
+                <div>
+                  <a href="#"
+                    ><img src="img/2021yeojung.jpg" alt="slide01"
+                  /></a>
+                  <a href="#"><img src="img/yeojung01.jpg" alt="slide02" /></a>
+                  <a href="#"><img src="img/yeojung02.jpg" alt="slide03" /></a>
+                  <a href="#"><img src="img/yeojung03.jpg" alt="slide04" /></a>
+                  <a href="#"
+                    ><img src="img/yeojung04jpg.jpg" alt="slide05"
+                  /></a>
+                  <a href="#"
+                    ><img src="img/yeojung05jpg.jpg" alt="slide05"
+                  /></a>
+                </div>
+              </div>
+              <div>
+                <p>
+                  <mark>- 여정, 여행을 정의하다 -</mark><br />
+                  물리적 이동으로 국한되었던 여행을 재정의하여 여러분에게 새로운
+                  여행을 선사한다는 취지의 오프라인 전시. 나의 행동에 따라
+                  느리고 빠르게 반응하는 사운드부터 코로나 이후 새롭게 그려지는
+                  성향별 미디어지도, 우리가 사는 조치원을 추상적으로 재해석한
+                  증강현실 로드맵 등 다영한 인터랙티브 미디어 아트 작품을
+                  제작하였다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="layout">
+            <h2>2020</h2>
+            <div class="projbox">
+              <span>만춘 2020. 온라인 웹 전시</span>
+              <a
+                id="image_link"
+                href="https://hi-oslab.github.io/latespring2020/"
+                id="latespring"
+              >
+                <img src="img/latespring.jpg" alt="2020_latespring"
+              /></a>
+              <div>
+                <p class="golink">사진 클릭 후 전시페이지로 넘어갑니다</p>
+                <p>
+                  <mark>- 만춘:지나가버린 봄 -</mark> <br />
+                  ‘보통의 봄’과 달리, 코로나 19 상황은 어쩌면 우리에게 새로운
+                  의미의 봄을 보여줬을 지도 모른다. 코로나 상황 속, 흘러가듯
+                  늦은 봄을 보내는 우리들의 생각을 담고자 《만춘》을 준비해
+                  보았다. 모든 과정을 비대면으로 진행해 온 우리는 관람객과
+                  소통하는 ‘인터렉션(Interaction)’에 초점을 맞춰 시공간에
+                  구애받지 않는 언택트(Untact) 작품을 만들고자 하였다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="layout">
+            <h2>2019</h2>
+            <div class="projbox">
+              <span>2019 시발점. 첫 전시회</span>
+              <div class="slide05">
+                <div>
+                  <a href="#"
+                    ><img src="img/2019_sibaljeom.JPG" alt="slide01"
+                  /></a>
+                  <a href="#"
+                    ><img src="img/sibaljeom_01.jpg" alt="slide02"
+                  /></a>
+                  <a href="#"
+                    ><img src="img/sibaljeom_02.jpg" alt="slide03"
+                  /></a>
+                  <a href="#"
+                    ><img src="img/sibaljeom_03.jpg" alt="slide04"
+                  /></a>
+                  <a href="#"
+                    ><img src="img/sibaljeom_04.jpg" alt="slide05"
+                  /></a>
+                </div>
+              </div>
+              <div>
+                <p>
+                  <mark>- 시발점. 처음 시작되다! -</mark><br />
+                  Open Source Lab에서 처음으로 진행한 전시. 시작하다라는 의미를
+                  담은 '시발점'을 주제로 피지털컴퓨팀 1 팀, 비주얼 프로그래밍
+                  3팀이 인터랙티브 미디어 아트 작품을 선보였다. 홍익대학교에서
+                  실시간으로 관객참여가 가능한 인터랙티브 미디어아트 전시는
+                  처음이었으며 이 전시를 통해 'Open Source Lab'의 존재를
+                  조금이나마 더 알릴 수 있었다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="layout">
+            <h2>2018</h2>
+            <div class="projbox">
+              <span>2018 Processing Study</span>
+              <img src="img/2018_oslabstudy.jpg" alt="2018_osl_study" />
+              <div>
+                <p>
+                  <mark>- Processing Study -</mark><br />
+                  매주마다 Processing 기본 제공 함수 하나를 정하여 모든
+                  맴버들끼리 직접 함수 구조를 만들어보는 스터디형식으로
+                  프로그래밍에 대한 전반적인 이해력과 함수 활용 능력을 높여
+                  코딩에 대해 한 발짝 더 다가갈 수 있도록 하는 스터디였다. 그
+                  외에도 스터디 전에 진행하는 10분 코딩 워크샵을 통해
+                  비주얼프로그래밍에 자신감과 재미를 얻을 수 있었다.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="logo">
-      <a href="https://instagram.com/opensource_lab">
-        <img src="img/osl_logo.png" alt="logo">
-      </a>
+      <div class="logo">
+        <a href="https://instagram.com/opensource_lab">
+          <img src="img/osl_logo.png" alt="logo" />
+        </a>
+      </div>
+      <div class="sns">
+        <a href="index.html">Open Source Lab</a>
+      </div>
     </div>
-    <div class="sns">
-      <a href="index.html">Open Source Lab</a>
-    </div>
-  </div>
-
-</body>
-
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
 </html>
