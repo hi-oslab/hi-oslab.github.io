@@ -136,8 +136,7 @@ a {
 /*main css*/
 @font-face {
   font-family: "Arita-buri-SemiBold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
@@ -166,6 +165,7 @@ body {
   z-index: 99;
   transition: 0.5s;
 }
+
 .sns:hover {
   box-shadow: 2px 2px 2px 2px;
 }
@@ -176,9 +176,11 @@ body {
   z-index: 99;
   padding: 10px;
 }
+
 .logo img {
   transition: 0.5s;
 }
+
 .logo img:hover {
   opacity: 70%;
 }
@@ -187,10 +189,10 @@ body {
   position: fixed;
   color: #000;
   z-index: 99;
-
 }
 
 @media all and (min-width: 768px) {
+
   /*Desktop*/
   .nav {
     border-top: 2px solid #000;
@@ -214,10 +216,12 @@ body {
     box-sizing: border-box;
     flex: 1;
   }
-  .menu li > a {
+
+  .menu li>a {
     transition: 0.5s;
   }
-  .menu li:hover > a {
+
+  .menu li:hover>a {
     background: #000;
     color: #fff;
   }
@@ -230,30 +234,36 @@ body {
     text-align: right;
   }
 
-  .menu li > a {
+  .menu li>a {
     display: block;
     font-size: 4vw;
     padding: 5px;
   }
+
   .m_menu {
     display: none;
   }
+
   .logo {
     right: 0px;
   }
+
   .logo img {
     width: 8vw;
   }
+
   #clock {
     font-size: 6vh;
     writing-mode: vertical-lr;
     padding: 10px;
     top: 50%;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
     right: 0px;
   }
 }
+
 @media all and (max-width: 768px) {
+
   /* Mobile */
   .nav {
     display: none;
@@ -270,19 +280,18 @@ body {
     border: 2px solid #000;
     border-radius: 15px;
     background: #fff;
-        width:fit-content;
+    width: fit-content;
 
   }
 
-  .m_menu  a {
+  .m_menu a {
     display: block;
     transition: 0.5s;
-        padding: 10px;
+    padding: 10px;
 
   }
 
-  .m_menu a:hover {
-  }
+  .m_menu a:hover {}
 
   .sub-menu {
     height: fit-content;
@@ -295,7 +304,8 @@ body {
     padding: 10px;
 
   }
-  .sub-menu a:first-child{
+
+  .sub-menu a:first-child {
     border-top: 2px solid #000;
   }
 
@@ -303,19 +313,21 @@ body {
     background-color: #000;
     color: #fff;
   }
+
   .logo {
     right: 0px;
     bottom: 0px;
   }
+
   .logo img {
     width: 10vw;
   }
+
   #clock {
-    font-size: 5vw;
-    bottom: 0px;
-    margin: 10px;
-      border: 2px solid #000;
-  border-radius: 15px;
-  padding: 10px;
+    position: fixed;
+    bottom: 0;
+    font-size: 6vh;
+    writing-mode: vertical-lr;
+    padding: 10px;
   }
 }

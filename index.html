@@ -1,156 +1,200 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>Open Source Lab</title>
-    <link
-      rel="stylesheet"
-      href="https://indestructibletype.com/fonts/Jost.css"
-      type="text/css"
-      charset="utf-8"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="js/p5.min.js"></script>
-    <script>
-      function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-      }
 
-      function checkTime(i) {
-        if (i < 10) {
-          i = "0" + i;
-        } // 숫자가 10보다 작을 경우 앞에 0을 붙여줌
-        return i;
-      }
-    </script>
-    <style>
-      .popup {
-        background-color: rgba(0, 0, 0, 0.09);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 100;
-        /* display: none; */
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Open Source Lab</title>
+  <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/p5.min.js"></script>
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
 
-      .popup_contents {
-        width: 320px;
-        background-color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
-        text-align: center;
-        box-sizing: border-box;
-      }
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      } // 숫자가 10보다 작을 경우 앞에 0을 붙여줌
+      return i;
+    }
+  </script>
+  <style>
+    body {
+      overflow: hidden;
+    }
 
-      .popup_contents h3 {
-        padding: 10px;
-        font-weight: bold;
-      }
+    .popup {
+      background-color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      /* display: none; */
+    }
 
-      .popup_contents a {
-        text-decoration: none;
-        color: white;
-        background-color: #000;
-        transition: 0.5s;
-      }
+    .popup_contents {
+      min-width: 320px;
+      width: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+      text-align: center;
+      box-sizing: border-box;
+    }
 
-      .popup_contents a:hover {
-        background-color: #fff;
-        color: #000;
-      }
+    .popup_contents a {
+      text-decoration: none;
+      transition: 0.5s;
+    }
 
-      .popup_contents p {
-        font-size: small;
-        line-height: 1.6em;
-        padding: 10px;
-      }
+    .popup_footer a {
+      color: white;
+      background-color: #000;
+    }
 
-      .popup_link {
-        border: 2px solid #000;
-        padding: 2px 10px;
-        border-radius: 10px;
-        margin: 15px;
-        font-size: small;
-        font-weight: bold;
-      }
+    .popup_footer a:hover {
+      background-color: #fff;
+      border: 2px solid #000;
+      color: #000;
+    }
 
-      .close_popup {
-        background-color: #000;
-        color: #fff;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        border: 2px solid #000;
-        padding: 2px 7px;
-        border-radius: 5px;
-        font-size: small;
-      }
-    </style>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  </head>
+    .popup_footer p {
+      font-size: small;
+      padding: 10px;
+    }
 
-  <body onload="startTime()">
-    <div class="container">
-      <div class="nav">
-        <ul class="menu">
-          <li><a href="index.html">home</a></li>
-          <li><a href="info.html">info</a></li>
-          <li><a href="works.html">works</a></li>
-          <li><a href="contact.html">contact</a></li>
-        </ul>
-      </div>
-      <div class="m_menu">
-        <a href="#">MENU</a>
-        <div class="sub-menu">
-          <a href="index.html">home</a>
-          <a href="info.html">info</a>
-          <a href="works.html">works</a>
-          <a href="contact.html">contact</a>
-        </div>
-      </div>
-      <div class="main">
-        <script src="js/canvas.js"></script>
-      </div>
-      <div class="logo">
-        <a href="https://instagram.com/opensource_lab">
-          <img src="img/osl_logo.png" alt="logo" />
-        </a>
-      </div>
-      <div class="sns">
-        <a href="index.html">Open Source Lab</a>
-      </div>
-      <div id="clock"></div>
+    .popup_contents {
+      display: grid;
+      border: 1px solid #000;
+    }
+
+    .popup_exit {
+      line-height: 1.5em;
+      border-bottom: 1px solid #000;
+    }
+
+    .popup_exit:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .popup_header {
+      line-height: 2em;
+      padding: 10px 0;
+    }
+
+    .popup_header div {
+      width: 100%;
+    }
+
+    .popup_header div span {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .popup_image {
+      display: grid;
+      place-items: center;
+      padding: 0 10px;
+
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .popup_image img {
+      width: 100%;
+    }
+
+    .popup_footer {
+      min-height: 100px;
+    }
+
+    .popup_footer p {
+      line-height: 1.5em;
+    }
+
+    .popup_link {
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: small;
+      font-weight: bold;
+      margin: 10px;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body onload="startTime()">
+  <div class="container">
+    <div class="nav">
+      <ul class="menu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="info.html">info</a></li>
+        <li><a href="works.html">works</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
     </div>
-    <!-- <div class="popup">
+    <div class="m_menu">
+      <a href="#">MENU</a>
+      <div class="sub-menu">
+        <a href="index.html">home</a>
+        <a href="info.html">info</a>
+        <a href="works.html">works</a>
+        <a href="contact.html">contact</a>
+      </div>
+    </div>
+    <div class="main">
+      <script src="js/canvas.js"></script>
+    </div>
+    <div class="logo">
+      <a href="https://instagram.com/opensource_lab">
+        <img src="img/osl_logo.png" alt="logo" />
+      </a>
+    </div>
+    <div class="sns">
+      <a href="index.html">Open Source Lab</a>
+    </div>
+    <div id="clock"></div>
+  </div>
+  <div class="popup">
     <div class="popup_contents">
-      <h3>
-        ✨2022 오픈소스랩 신입부원 모집✨
-      </h3>
-      <p>디지털 미디어를 활용한 인터랙션에 관심이 있는 재학생 및 휴학생 누구나 환영합니다!</p>
-      <a href="https://forms.gle/WaP2sGbULnSjJjDL7" class="popup_link">구글폼 작성하기!</a>
-      <p>아래 링크로 들어가서 모바일 기기의 기울기에 따라 반응하는 인터랙티브 웹페이지를 체험할 수 있어요!</p>
-      <p style="margin-top: -10px; color: red;">기본 브라우저에서 작동해주세요!<br> 아이폰은 센서 허가 후 새로고침 필수!</p>
-      <a href="https://hi-oslab.github.io/recruit2022/" class="popup_link">인터랙티브 웹포스터 구경하기!</a>
+      <div class="popup_exit">
+        <a href="#" class="close_popup">x</a>
+      </div>
+      <div class="popup_header">
+        <div> <span>✨DDP 서울디자인2022 기획전시✨</span>
+          <br>
+          <span> <mark> 끌:력 서로가 서로를 이끄는 힘
+            </mark></span></div>
+      </div>
+      <div class="popup_image">
+        <img src="img/포스터 카톡1.png" alt="포스터1">
+        <img src="img/포스터 카톡2.png" alt="포스터2">
+      </div>
+      <div class="popup_footer">
+        <p>디지털 미디어를 활용한 인터랙션에 관심이 있는 재학생 및 휴학생 누구나 환영합니다!</p>
+        <a href="https://forms.gle/e6NND8u9xErbKi3e6" class="popup_link">네트워킹파티 신청하기!</a>
+      </div>
     </div>
-  </div> -->
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/custom.js"></script>
-  </body>
+  </div>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+
 </html>
