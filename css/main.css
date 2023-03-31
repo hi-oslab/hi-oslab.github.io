@@ -135,8 +135,8 @@ a {
 
 /*main css*/
 @font-face {
-  font-family: 'S-CoreDream';
-  src: url('SCDream2.otf') format('opentype');
+  font-family: 'Pretendard';
+  src: url('Pretendard-Light.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   unicode-range: U+AC00-U+D7A3;
@@ -157,7 +157,8 @@ a {
 }
 
 body {
-  font-family: Jost, S-CoreDream;
+  font-family: Jost,
+    Pretendard;
   transition: 0.5s;
 }
 
