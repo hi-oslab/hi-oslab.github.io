@@ -167,7 +167,7 @@ body {
 }
 
 .sns:hover {
-  box-shadow: 2px 2px 2px 2px;
+  box-shadow: 2px 2px 2px #000;
 }
 
 .logo {
@@ -195,7 +195,7 @@ body {
 
   /*Desktop*/
   .nav {
-    border-top: 2px solid #000;
+    /* border-top: 2px solid #000; */
     box-sizing: border-box;
     position: fixed;
     bottom: 0;
@@ -214,16 +214,30 @@ body {
     float: left;
     text-align: center;
     box-sizing: border-box;
+    background: #000;
     flex: 1;
   }
 
   .menu li>a {
     transition: 0.5s;
+    background: #fff;
+    border-top: 2px solid #000;
+    cursor: pointer;
+    /* border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top: 2px solid #000; */
+  }
+
+  .menu li>a:first-child {
+    /* border-left: 0px; */
+  }
+
+  .menu li>a:last-child {
+    /* border-right: 0px; */
   }
 
   .menu li:hover>a {
-    background: #000;
-    color: #fff;
+    transform: translate(-5px, -5px);
   }
 
   .menu li:first-child {
@@ -270,7 +284,9 @@ body {
   }
 
   .m_menu {
+    cursor: pointer;
     position: fixed;
+    overflow: hidden;
     right: 0%;
     top: 0%;
     margin: 10px;
@@ -281,7 +297,7 @@ body {
     border-radius: 15px;
     background: #fff;
     width: fit-content;
-
+    transition: 0.5s;
   }
 
   .m_menu a {
@@ -291,7 +307,10 @@ body {
 
   }
 
-  .m_menu a:hover {}
+  .m_menu:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 2px #000;
+  }
 
   .sub-menu {
     height: fit-content;
