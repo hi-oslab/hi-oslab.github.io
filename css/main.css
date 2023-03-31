@@ -135,10 +135,20 @@ a {
 
 /*main css*/
 @font-face {
-  font-family: "Arita-buri-SemiBold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff") format("woff");
-  font-weight: bold;
+  font-family: 'S-CoreDream';
+  src: url('SCDream2.otf') format('opentype');
+  font-weight: normal;
   font-style: normal;
+  unicode-range: U+AC00-U+D7A3;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('Jost-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0041-005A,
+    U+0061-007A;
 }
 
 .container {
@@ -147,8 +157,7 @@ a {
 }
 
 body {
-  font-family: "Jost";
-  font-weight: 300;
+  font-family: Jost, S-CoreDream;
   transition: 0.5s;
 }
 
