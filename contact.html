@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Open Source Lab</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .menu li:last-child>a {
+      font-weight: 300;
+      background: #000;
+      color: #fff;
+      transform: translate(0px, 0px);
+
+    }
+
+    .contactbox {
+      position: absolute;
+      box-sizing: border-box;
+      top: 50%;
+      margin: 10px;
+      transform: translate(0%, -50%);
+      z-index: 9;
+    }
+
+    .mailbox,
+    .instabox {
+      box-sizing: border-box;
+      background: #fff;
+      display: block;
+      border: 2px solid #000;
+      border-radius: 20px;
+
+      padding: 10px;
+      margin-bottom: 10px;
+      transition: 0.5s;
+    }
+
+    .mailbox>a,
+    .instabox>a {
+      font-size: 8vw;
+    }
+
+    .mailbox:hover,
+    .instabox:hover {
+      box-shadow: 2px 2px 2px 2px;
+    }
+
+    p span {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+      <ul class="menu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="info.html">info</a></li>
+        <li><a href="works.html">works</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+    <div class="m_menu">
+      <a href="#">MENU</a>
+      <div class="sub-menu">
+        <a href="index.html">home</a>
+        <a href="info.html">info</a>
+        <a href="works.html">works</a>
+        <a href="contact.html">contact</a>
+      </div>
+    </div>
+    <div class="main">
+      <!-- main content-->
+      <div class="contactbox">
+        <div class="mailbox">
+          <a href="mailto:hi.oslab@gmail.com">e-mail</a>
+          <p>To contact us, email <span>hi.oslab@gmail.com</span></p>
+        </div>
+        <div class="instabox">
+          <a href="https://www.instagram.com/opensource_lab">Instagram DM</a>
+          <p>
+            Also you can contact us on Instagram.<span>@opensource_lab</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo">
+      <a href="https://instagram.com/opensource_lab">
+        <img src="img/osl_logo.png" alt="logo" />
+      </a>
+    </div>
+    <div class="sns">
+      <a href="index.html">Open Source Lab</a>
+    </div>
+  </div>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+
+</html>

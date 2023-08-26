@@ -1,0 +1,362 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*main css*/
+@font-face {
+  font-family: 'Pretendard';
+  src: url('Pretendard-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+AC00-U+D7A3;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('Jost-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0041-005A,
+    U+0061-007A;
+}
+
+.container {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-family: Jost,
+    Pretendard;
+  transition: 0.5s;
+}
+
+.sns {
+  position: fixed;
+  background: #fff;
+  box-sizing: border-box;
+  font-size: 5vw;
+  border: 2px solid #000;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  left: 0;
+  z-index: 99;
+  transition: 0.5s;
+}
+
+.sns:hover {
+  box-shadow: 2px 2px 2px #000;
+}
+
+.logo {
+  position: fixed;
+
+  z-index: 99;
+  padding: 10px;
+}
+
+.logo img {
+  transition: 0.5s;
+}
+
+.logo img:hover {
+  opacity: 70%;
+}
+
+#clock {
+  position: fixed;
+  color: #000;
+  z-index: 99;
+}
+
+@media all and (min-width: 768px) {
+
+  /*Desktop*/
+  .nav {
+    /* border-top: 2px solid #000; */
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+  }
+
+  .menu {
+    display: flex;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .menu li {
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+    background: #000;
+    flex: 1;
+  }
+
+  .menu li>a {
+    transition: 0.5s;
+    background: #fff;
+    border-top: 2px solid #000;
+    cursor: pointer;
+    /* border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top: 2px solid #000; */
+  }
+
+  .menu li>a:first-child {
+    /* border-left: 0px; */
+  }
+
+  .menu li>a:last-child {
+    /* border-right: 0px; */
+  }
+
+  .menu li:hover>a {
+    transform: translate(-5px, -5px);
+  }
+
+  .menu li:first-child {
+    text-align: left;
+  }
+
+  .menu li:last-child {
+    text-align: right;
+  }
+
+  .menu li>a {
+    display: block;
+    font-size: 4vw;
+    padding: 5px;
+  }
+
+  .m_menu {
+    display: none;
+  }
+
+  .logo {
+    right: 0px;
+  }
+
+  .logo img {
+    width: 8vw;
+  }
+
+  #clock {
+    font-size: 6vh;
+    writing-mode: vertical-lr;
+    padding: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 0px;
+  }
+}
+
+@media all and (max-width: 768px) {
+
+  /* Mobile */
+  .nav {
+    display: none;
+  }
+
+  .m_menu {
+    cursor: pointer;
+    position: fixed;
+    overflow: hidden;
+    right: 0%;
+    top: 0%;
+    margin: 10px;
+    text-align: right;
+    font-size: 5vw;
+    z-index: 99999;
+    border: 2px solid #000;
+    border-radius: 15px;
+    background: #fff;
+    width: fit-content;
+    transition: 0.5s;
+  }
+
+  .m_menu a {
+    display: block;
+    transition: 0.5s;
+    padding: 10px;
+
+  }
+
+  .m_menu:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 2px #000;
+  }
+
+  .sub-menu {
+    height: fit-content;
+    display: none;
+  }
+
+  .sub-menu a {
+    display: block;
+    transition: 0.5s;
+    padding: 10px;
+
+  }
+
+  .sub-menu a:first-child {
+    border-top: 2px solid #000;
+  }
+
+  .sub-menu a:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .logo {
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .logo img {
+    width: 10vw;
+  }
+
+  #clock {
+    position: fixed;
+    bottom: 0;
+    font-size: 6vh;
+    writing-mode: vertical-lr;
+    padding: 10px;
+  }
+}
